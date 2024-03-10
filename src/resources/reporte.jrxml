@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d543af13-65e1-4cca-aab0-44f9780c4fcd">
+	<property name="ireport.zoom" value="0.8264462809917356"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#0088FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#000000">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset1" uuid="1682fb6f-5fbb-404a-a243-041143a5e77c"/>
+	<subDataset name="dataset2" uuid="e154f8e3-148a-428a-8b00-d8ff21071bc5"/>
+	<subDataset name="Table Dataset 1" uuid="dfa8daf4-2ac3-4947-bb01-30cac926c3ca"/>
+	<subDataset name="Table Dataset 2" uuid="1c6a7ab4-2e50-4a37-a2ba-2707ad4ad483"/>
+	<subDataset name="Table Dataset 3" uuid="ca39f3b7-1268-4bd1-bd46-a69b745c70a3"/>
+	<subDataset name="dataset3" uuid="91fbfdc1-bf7a-431e-9f8e-6e421bc1186f"/>
+	<subDataset name="dataset4" uuid="8275c4c4-0b58-440c-8fdc-bfb70d0f30c7"/>
+	<subDataset name="dataset5" uuid="472456ea-a389-4941-ad35-782e387d294d"/>
+	<subDataset name="New Dataset 1" uuid="5a43e216-5140-4005-9c46-0829ffc7017e"/>
+	<subDataset name="New Dataset 2" uuid="d0d8b16b-d557-48ff-9db3-8fce829d459c"/>
+	<parameter name="descripcion_trabajo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cargo_viaje" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="total_labor" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="comentarios_trabajo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cliente" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="direccion" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="trabajo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="folio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="terminos" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="total_f" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="jetter_f" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="snake_f" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cargo_f" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="lumber_f" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tax_f" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="material_f" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="trabajador" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_trabajador" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="m_cantidad" class="java.util.Collection">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="m_costo" class="java.util.Collection">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="m_material" class="java.util.Collection">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="m_total" class="java.util.Collection">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="lista_material" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="cantidad" class="java.lang.String"/>
+	<field name="costo" class="java.lang.String"/>
+	<field name="material" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="154" splitType="Stretch">
+			<image>
+				<reportElement x="332" y="15" width="221" height="139" uuid="46d253c3-b252-49e0-8698-718032046fd8"/>
+				<imageExpression><![CDATA["C:\\Users\\dsoto\\OneDrive\\Escritorio\\AlemanPluming\\src\\imagenes\\Captura de pantalla 2024-01-27 184343.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="379" y="3" width="100" height="22" forecolor="#FF0000" uuid="67145140-4085-4013-89ff-af4994e9688c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="15" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{folio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="17" y="35" width="67" height="20" uuid="dca7120e-4cf2-4e4c-aa9b-467b1c8aa9b9"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order by:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="17" y="94" width="67" height="20" uuid="260119f5-4b07-4ef9-a6e7-324277a4a58c"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="17" y="63" width="67" height="20" uuid="ea49a39c-3ec5-4f1d-8e6e-0bacb1d00dee"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="84" y="35" width="214" height="20" uuid="9b39325b-d2ca-415b-97ed-97e1f3e2c30b"/>
+				<textFieldExpression><![CDATA[$P{cliente}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="84" y="63" width="214" height="31" uuid="33edf209-bd78-4578-acf9-633997fafbac"/>
+				<textFieldExpression><![CDATA[$P{direccion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="84" y="94" width="214" height="20" uuid="68165830-7250-46dd-ba0b-e32acd1dbe06"/>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="5" width="67" height="20" uuid="b06a951c-6617-499e-99e9-17fb62f7d198"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Work Order:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="84" y="5" width="258" height="40" uuid="09b1a7b3-1a56-44e2-88e1-c290667f6961"/>
+				<textElement markup="none">
+					<font isBold="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{trabajo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="466" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="21" width="538" height="105" uuid="2f171b03-4453-47de-8d78-dd648a7fb447"/>
+				<textElement>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{descripcion_trabajo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="408" y="126" width="79" height="20" uuid="9bf0d532-6eb8-4e5d-a549-ffa019524d9c"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Trip Charge: $]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="361" y="146" width="126" height="20" uuid="721389fc-df70-4aef-9373-9429cadacf5d"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Labor Charge:  $]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="126" width="66" height="20" uuid="a70f3acf-33a3-4450-88a8-531952806fbc"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cargo_viaje}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="146" width="66" height="20" uuid="97a0e812-d7ca-471d-8516-c992e9d92770"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total_labor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="17" y="146" width="83" height="20" uuid="e528bc8e-71fc-43f1-be2c-54dbe1606f36"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Material Used:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="398" y="186" width="89" height="20" uuid="3a5a277a-1d65-4729-a372-884156dcb5d5"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Material Cost: $]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="186" width="66" height="20" uuid="97802e39-5790-4b53-8db1-62d12f63e6fd"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material_f}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="421" y="208" width="66" height="20" uuid="e014c8ab-ed98-400f-9616-3b0c6a228678"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales Tax: $]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="208" width="66" height="20" uuid="948ac920-ebdd-4220-bd82-ca066ba524ad"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tax_f}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="408" y="228" width="79" height="20" uuid="8eb85770-a14c-4c03-9ba0-633c2032d2a7"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lumber Fee: $]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="228" width="66" height="20" uuid="85095a77-ebff-4c86-b21e-c1b15be7a862"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lumber_f}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="398" y="248" width="89" height="20" uuid="801d6b9a-87b4-46d5-917f-310b48775113"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Labor Charge: $]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="248" width="66" height="20" uuid="07aed6a4-4cb6-4dd1-a525-f91feac938dd"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cargo_f}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="367" y="268" width="120" height="20" uuid="c4db2b99-baac-4656-a133-6792ccb3f1d4"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Snake Charge Fees: $]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="268" width="66" height="20" uuid="5eedca93-ba2a-4fc9-9517-14858ff12fa5"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{snake_f}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="336" y="288" width="151" height="20" uuid="61339dcb-cf4f-49c7-85cc-84eee0f0d07c"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hidro Jetter Charge Fees: $]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="288" width="66" height="20" uuid="27e2f92e-2b67-4cce-906c-18f93eaa45a3"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{jetter_f}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="408" y="307" width="79" height="20" uuid="c2905fad-599c-4c27-86de-b54c1cd26783"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grand Total: $]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="487" y="307" width="66" height="20" uuid="4c5b34e3-212a-42e1-8cec-e80a377d0bd0"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total_f}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="121" y="343" width="88" height="21" uuid="de6becd8-d9e7-4046-92da-5acf72f03886"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Completed By:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="206" y="343" width="198" height="21" uuid="b0df90ad-fe09-4e7b-80d4-37e6ef9dd827"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{trabajador}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="451" y="342" width="94" height="21" uuid="f0deb4a3-1337-4408-a31a-7563fb90dc78"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha_trabajador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="412" y="343" width="39" height="21" uuid="f0868ad9-d94d-4a36-b63a-b47221f48fa7"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="121" y="361" width="73" height="21" uuid="7398cb88-562a-40fa-8f53-5360a2873ccb"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comments:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="194" y="364" width="351" height="90" uuid="089ad4a2-d632-4b7d-94f2-b43eba8c03e0"/>
+				<textElement>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{comentarios_trabajo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="121" y="465" width="432" height="1" uuid="2eb48c73-7bf9-439f-bb33-3a130f219e0e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="15" y="1" width="126" height="20" uuid="e3884a38-2fb4-417f-9713-f25402e68429"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type Of Work Completed:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="361" y="176" width="184" height="1" forecolor="#CCCCCC" uuid="33697375-5222-4be2-8778-ec22fe1ab599"/>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="17" y="166" width="303" height="161" uuid="b68829af-cb1f-492c-aad1-b9140974b646"/>
+				<textFieldExpression><![CDATA[$P{lista_material}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="67" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="129" y="27" width="424" height="40" uuid="eac31f8d-1eff-4863-a9dc-fa2cd411d888"/>
+				<textElement>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{terminos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="129" y="7" width="82" height="21" uuid="16ff3190-1d46-49f9-a4dc-458a6a4f9703"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Credit Terms:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

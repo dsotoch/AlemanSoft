@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alemanpluming.SegundaController">
+    <children>
+        <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab text="New Invoice">
+                    <content>
+                        <HBox spacing="10.0" style="-fx-background-color: white; -fx-border-color: cyan;">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                            <children>
+                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <TitledPane text="Customer Data" VBox.vgrow="ALWAYS">
+                                            <content>
+                                                <VBox spacing="10.0" style="-fx-background-color: white;">
+                                                    <children>
+                                                        <HBox spacing="4.0" VBox.vgrow="ALWAYS">
+                                                            <children>
+                                                                <Label text="Order By:" wrapText="true" HBox.hgrow="ALWAYS">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="cliente" HBox.hgrow="ALWAYS" />
+                                                                <Button fx:id="boton_search" defaultButton="true" mnemonicParsing="false" onAction="#onSearchBotonClicked" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Search" wrapText="true" HBox.hgrow="ALWAYS">
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="CLOSED_HAND" />
+                                                                    </cursor>
+                                                                </Button>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="4.0" top="4.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                        <HBox spacing="6.0" VBox.vgrow="ALWAYS">
+                                                            <children>
+                                                                <Label text="Address:" wrapText="true">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets bottom="4.0" top="4.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                                <TextField fx:id="direccion" HBox.hgrow="ALWAYS" />
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox spacing="24.0" VBox.vgrow="ALWAYS">
+                                                            <children>
+                                                                <Label text="Date:" wrapText="true">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets bottom="4.0" top="4.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                                <DatePicker fx:id="fecha" prefHeight="23.0" prefWidth="228.0" promptText="MM/dd/yyyy" HBox.hgrow="ALWAYS">
+                                                                   
+                                                                </DatePicker>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                            <font>
+                                                <Font name="Arial" size="13.0" />
+                                            </font>
+                                        </TitledPane>
+                                        <TitledPane text="Materials" VBox.vgrow="ALWAYS">
+                                            <content>
+                                                <HBox style="-fx-background-color: white;">
+                                                    <children>
+                                                        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <HBox spacing="4.0" VBox.vgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label text="Material:" wrapText="true" HBox.hgrow="ALWAYS">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                            <padding>
+                                                                                <Insets bottom="4.0" top="4.0" />
+                                                                            </padding>
+                                                                        </Label>
+                                                                        <TextField fx:id="material" HBox.hgrow="ALWAYS" />
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox spacing="25.0" VBox.vgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label text="Cost:" wrapText="true" HBox.hgrow="ALWAYS">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="costo" HBox.hgrow="ALWAYS" />
+                                                                        <Label text="Quantity:" HBox.hgrow="ALWAYS">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="cantidad" HBox.hgrow="ALWAYS" />
+                                                                        <Button defaultButton="true" mnemonicParsing="false" onAction="#onGuardarMaterialClicked" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-weight: bold;" text="Add" translateX="-15.0" HBox.hgrow="ALWAYS">
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="CLOSED_HAND" />
+                                                                            </cursor>
+                                                                        </Button>
+                                                                    </children>
+                                                                </HBox>
+                                                                <TextArea fx:id="detalle_materiales" editable="false" prefHeight="174.0" prefWidth="329.0" wrapText="true" VBox.vgrow="ALWAYS" />
+                                                                <GridPane style="-fx-background-color: white;">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <Label text="Material Cost:">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label layoutX="10.0" layoutY="17.0" text="Sales Tax:" GridPane.rowIndex="1">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label layoutX="10.0" layoutY="47.0" text="Lumber Fee:" GridPane.rowIndex="2">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label layoutX="10.0" layoutY="77.0" text="Labor Charge:" GridPane.rowIndex="3">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label layoutX="10.0" layoutY="107.0" text="Snake Charge Fees:" GridPane.rowIndex="4">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label text="Hidro Jetter Charge Fees:" GridPane.rowIndex="5">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label text="Grand Total:" GridPane.rowIndex="6">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="costo_materiales" onKeyReleased="#onKeyReleaseText" text="0.0" GridPane.columnIndex="1" />
+                                                                        <TextField fx:id="impuesto" layoutX="175.0" layoutY="13.0" onKeyReleased="#onKeyReleaseText" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                        <TextField fx:id="tarifa_madera" layoutX="175.0" layoutY="43.0" onKeyReleased="#onKeyReleaseText" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                        <TextField fx:id="cargo_trabajo" layoutX="175.0" layoutY="73.0" onKeyReleased="#onKeyReleaseText" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                        <TextField fx:id="tarifa_cobros" layoutX="175.0" layoutY="103.0" onKeyReleased="#onKeyReleaseText" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                        <TextField fx:id="tarifa_cobros_idroject" layoutX="175.0" layoutY="133.0" onKeyReleased="#onKeyReleaseText" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                        <TextField fx:id="total" layoutX="175.0" layoutY="163.0" onKeyReleased="#onKeyReleaseText" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                    </children>
+                                                                </GridPane>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                            </content>
+                                            <font>
+                                                <Font name="Arial" size="13.0" />
+                                            </font>
+                                        </TitledPane>
+                                        <GridPane alignment="TOP_RIGHT" VBox.vgrow="ALWAYS">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="folio" alignment="CENTER_RIGHT" contentDisplay="RIGHT" textFill="#f80000" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                    </padding>
+                                </VBox>
+                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <TitledPane text="Job Details" VBox.vgrow="ALWAYS">
+                                            <content>
+                                                <VBox spacing="10.0" style="-fx-background-color: white;">
+                                                    <children>
+                                                        <GridPane style="-fx-background-color: white;" vgap="5.0" VBox.vgrow="ALWAYS">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints vgrow="SOMETIMES" />
+                                                                <RowConstraints vgrow="SOMETIMES" />
+                                                                <RowConstraints vgrow="SOMETIMES" />
+                                                                <RowConstraints vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Label text="Work Order:" wrapText="true">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="orden" prefHeight="28.0" prefWidth="387.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                                                                <Label prefHeight="59.0" prefWidth="100.0" text="Type of work order Completed:" wrapText="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextArea fx:id="descripcion" prefHeight="210.0" prefWidth="388.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                <Label text="Trip Charge : " wrapText="true" GridPane.rowIndex="2">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="cargo_viaje" prefHeight="28.0" prefWidth="389.0" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                <Label text="Total Labor Charge : " wrapText="true" GridPane.rowIndex="3">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="total_orden" onKeyReleased="#onKeyReleaseText2" prefHeight="28.0" prefWidth="386.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets />
+                                                            </VBox.margin>
+                                                        </GridPane>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                            <font>
+                                                <Font name="Arial" size="13.0" />
+                                            </font>
+                                        </TitledPane>
+                                        <TitledPane text="Other" VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="Arial" size="13.0" />
+                                            </font>
+                                            <content>
+                                                <VBox spacing="10.0" style="-fx-background-color: white;">
+                                                    <children>
+                                                        <GridPane hgap="10.0" VBox.vgrow="ALWAYS">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <HBox spacing="10.0">
+                                                                    <children>
+                                                                        <Label text="Completed By:" HBox.hgrow="ALWAYS">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="trabajador" HBox.hgrow="ALWAYS" />
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox spacing="10.0" GridPane.columnIndex="1">
+                                                                    <children>
+                                                                        <Label text="Date:" HBox.hgrow="ALWAYS">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <DatePicker fx:id="trabajador_fecha" HBox.hgrow="ALWAYS" />
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                        </GridPane>
+                                                        <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                                                            <children>
+                                                                <Label text="Comments:" HBox.hgrow="ALWAYS">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextArea fx:id="comentarios" text="None" wrapText="true" HBox.hgrow="ALWAYS" />
+                                                                <VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-border-radius: 5;" HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Button alignment="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#onGuardarBotonClicked" style="-fx-background-color: blue; -fx-font-weight: bold; -fx-text-fill: white;" text="Register" wrapText="true" VBox.vgrow="ALWAYS">
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="CLOSED_HAND" />
+                                                                            </cursor>
+                                                                        </Button>
+                                                                        <Button minWidth="100.0" mnemonicParsing="false" onAction="#Reset" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="New" VBox.vgrow="ALWAYS">
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="CLOSED_HAND" />
+                                                                            </cursor>
+                                                                        </Button>
+                                                                    </children>
+                                                                    <padding>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                    </padding>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox layoutX="20.0" layoutY="55.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                                                            <children>
+                                                                <Label minWidth="100.0" text="Credit Terms:" HBox.hgrow="ALWAYS">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <VBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label fx:id="terminos_invoice" maxWidth="600.0" prefHeight="81.0" prefWidth="592.0" text="Account due payable 10th of month. Balance unpaid after 30 days will be subject to a service charge of 1 - 1/2% per month of maximum allowed by law together with expenses incidental, intuited and reasonable attorney's fees." wrapText="true" VBox.vgrow="ALWAYS" />
+                                                                        <Button alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#Salir" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" text="X" textFill="#fc0505">
+                                                                            <cursor>
+                                                                                <Cursor fx:constant="CLOSED_HAND" />
+                                                                            </cursor>
+                                                                        </Button>
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </TitledPane>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </content>
+                </Tab>
+                <Tab text="Reports">
+                    <content>
+                        <HBox spacing="10.0" style="-fx-background-color: white; -fx-border-color: cyan;">
+                            <children>
+                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <HBox prefHeight="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <AnchorPane HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Pane id="invoices" layoutX="49.0" layoutY="51.0" prefHeight="210.0" prefWidth="267.0" style="-fx-border-radius: 10; -fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@segunda.css">
+                                                            <children>
+                                                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="23.0" text="Number of invoices posted." wrapText="true">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </padding>
+                                                                </Label>
+                                                                <Label fx:id="numero_db" layoutX="108.0" layoutY="89.0" text="0" textFill="#3700ff">
+                                                                    <font>
+                                                                        <Font size="48.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                            <effect>
+                                                                <DropShadow />
+                                                            </effect>
+                                                        </Pane>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="407.0" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Pane layoutX="49.0" layoutY="51.0" prefHeight="210.0" style="-fx-background-color: white;">
+                                                            <children>
+                                                                <VBox prefHeight="200.0" spacing="10.0">
+                                                                    <children>
+                                                                        <Label text="Last Invoice Details." wrapText="true" VBox.vgrow="ALWAYS">
+                                                                            <font>
+                                                                                <Font name="Arial Bold" size="13.0" />
+                                                                            </font>
+                                                                            <padding>
+                                                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                            </padding>
+                                                                        </Label>
+                                                                        <GridPane VBox.vgrow="ALWAYS">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <Label text="Order By:" textFill="#5500ff">
+                                                                                    <font>
+                                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                                <Label layoutX="10.0" layoutY="17.0" text="Date:" textFill="#5500ff" GridPane.rowIndex="1">
+                                                                                    <font>
+                                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                                <Label layoutX="10.0" layoutY="47.0" text="Total:" textFill="#5500ff" GridPane.rowIndex="2">
+                                                                                    <font>
+                                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                                <Label fx:id="cliente_r" text="No Data" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                                                                                <Label fx:id="fecha_r" layoutX="60.0" layoutY="17.0" text="No Data" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                                                                                <Label fx:id="monto_r" layoutX="60.0" layoutY="47.0" text="No Data" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                                                                            </children>
+                                                                        </GridPane>
+                                                                    </children>
+                                                                    <padding>
+                                                                        <Insets bottom="10.0" left="30.0" right="20.0" top="10.0" />
+                                                                    </padding>
+                                                                </VBox>
+                                                            </children>
+                                                            <effect>
+                                                                <DropShadow />
+                                                            </effect>
+                                                        </Pane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </HBox>
+                                        <Separator prefWidth="200.0" />
+                                        <VBox layoutX="10.0" layoutY="274.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <Label text="Search invoice data by invoice number" VBox.vgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="13.0" />
+                                                    </font>
+                                                    <padding>
+                                                        <Insets bottom="10.0" />
+                                                    </padding>
+                                                </Label>
+                                                <GridPane VBox.vgrow="SOMETIMES">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="95.0" minHeight="57.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="68.0" minHeight="30.0" prefHeight="50.0" valignment="TOP" vgrow="ALWAYS" />
+                                                        <RowConstraints maxHeight="34.0" minHeight="21.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <HBox prefWidth="200.0" spacing="10.0">
+                                                            <children>
+                                                                <Label text="Number:">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="txt_factura" />
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" top="10.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                                                        <Button mnemonicParsing="false" onAction="#buscar_numero_factura" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Search" GridPane.rowIndex="1">
+                                                            <GridPane.margin>
+                                                                <Insets />
+                                                            </GridPane.margin>
+                                                            <cursor>
+                                                                <Cursor fx:constant="CLOSED_HAND" />
+                                                            </cursor>
+                                                        </Button>
+                                                        <Label fx:id="txt_res_numero" text="Results:" textFill="#6a00ff" GridPane.rowIndex="2">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </content>
+                </Tab>
+                <Tab text="Settings">
+                    <content>
+                        <VBox alignment="TOP_RIGHT" style="-fx-background-color: white;">
+                            <children>
+                                <GridPane style="-fx-background-color: white;" vgap="30.0" VBox.vgrow="ALWAYS">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints valignment="TOP" vgrow="SOMETIMES" />
+                                        <RowConstraints valignment="TOP" />
+                                    </rowConstraints>
+                                    <children>
+                                        <HBox alignment="TOP_CENTER" spacing="10.0" style="-fx-background-color: white;" GridPane.hgrow="ALWAYS">
+                                            <children>
+                                                <Label text="Welcome to the Configuration Center" translateX="-70.0" translateY="70.0" underline="true" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="18.0" />
+                                                    </font>
+                                                    <textFill>
+                                                        <LinearGradient endX="1.0" endY="1.0">
+                                                            <stops>
+                                                                <Stop>
+                                                                    <color>
+                                                                        <Color />
+                                                                    </color>
+                                                                </Stop>
+                                                                <Stop offset="1.0">
+                                                                    <color>
+                                                                        <Color red="0.5532163977622986" green="0.19298245012760162" blue="0.8684210777282715" />
+                                                                    </color>
+                                                                </Stop>
+                                                            </stops>
+                                                        </LinearGradient>
+                                                    </textFill>
+                                                </Label>
+                                                <ImageView fitHeight="200.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                    <image>
+                                                        <Image url="@../imagenes/logo.png" />
+                                                    </image>
+                                                    <viewport>
+                                                        <Rectangle2D />
+                                                    </viewport>
+                                                    <effect>
+                                                        <DropShadow />
+                                                    </effect>
+                                                    <HBox.margin>
+                                                        <Insets top="10.0" />
+                                                    </HBox.margin>
+                                                </ImageView>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                            </padding>
+                                        </HBox>
+                                        <Label GridPane.rowIndex="2" />
+                                        <HBox prefHeight="100.0" GridPane.rowIndex="1">
+                                            <children>
+                                                <HBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label minWidth="100.0" text="Credit Terms:" HBox.hgrow="ALWAYS">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <TextArea fx:id="terminos" minWidth="500.0" wrapText="true" HBox.hgrow="ALWAYS" />
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                </HBox>
+                                                <HBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label text="Registered Terms">
+                                                                    <font>
+                                                                        <Font name="Arial Bold" size="13.0" />
+                                                                    </font>
+                                                                    <textFill>
+                                                                        <LinearGradient endX="1.0" endY="1.0">
+                                                                            <stops>
+                                                                                <Stop>
+                                                                                    <color>
+                                                                                        <Color red="0.34529727697372437" green="0.05409356579184532" blue="0.9736841917037964" />
+                                                                                    </color>
+                                                                                </Stop>
+                                                                                <Stop offset="1.0">
+                                                                                    <color>
+                                                                                        <Color red="0.5526315569877625" />
+                                                                                    </color>
+                                                                                </Stop>
+                                                                            </stops>
+                                                                        </LinearGradient>
+                                                                    </textFill>
+                                                                </Label>
+                                                                <Label fx:id="label_terminos" wrapText="true" VBox.vgrow="ALWAYS" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets left="10.0" />
+                                                    </padding>
+                                                </HBox>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                            </padding>
+                                        </HBox>
+                                        <Button fx:id="saveBoton" minWidth="100.0" mnemonicParsing="false" onAction="#onSaveBotonClicked" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Save" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                            <padding>
+                                                <Insets bottom="10.0" top="10.0" />
+                                            </padding>
+                                            <cursor>
+                                                <Cursor fx:constant="CLOSED_HAND" />
+                                            </cursor>
+                                        </Button>
+                                    </children>
+                                    <effect>
+                                        <DropShadow />
+                                    </effect>
+                                </GridPane>
+                                <Label alignment="CENTER_RIGHT" text="We invite you to be part of our creative community! Visit us at www.viru-tec.com" underline="true" wrapText="true" VBox.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>
